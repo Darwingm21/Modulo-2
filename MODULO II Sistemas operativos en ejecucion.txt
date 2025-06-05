@@ -1,0 +1,50 @@
+MODULO II: Sistemas operativos en ejecución
+
+Practica 1:
+
+sudo dnf update
+sudo dnf upgrade
+sudo su
+dnf repolist
+dnf repolist --all
+sudo dnf search
+bashtop
+sudo dnf install bashtop
+sudo dnf install epel-release -y
+sudo dnf install bashtop -y
+sudo dnf remove bashtop -y
+rm -rf ~/.config/bashtop
+sudo dnf autoremove -y
+
+
+Practica 2:
+
+sudo
+crontab -e
+nano
+dnf -y update
+fg
+/sbin/reboot
+crontab -l
+ls /tmp
+systemctl start atd
+systemctl enable atd
+echo "rm -rf /tmp/*" | at now + 1 minute
+atq
+
+Practica 3:
+
+lsblk
+sudo fdisk /dev/sda
+sudo mkfs.ext4 /dev/sda1
+mkdir /home/darwing20242690/disco
+cd ..
+cd 
+ls
+rmdir discon
+pwd
+sudo mount /dev/sda1 /home/darwing20242690/disco
+touch AdrianAlcantara.txt
+sudo umount /home/darwing20242690/disco
+sudo mount /dev/sda1 /mnt
+
