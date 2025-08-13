@@ -47,4 +47,91 @@ sudo mount /dev/sda1 /home/darwing20242690/disco
 touch AdrianAlcantara.txt
 sudo umount /home/darwing20242690/disco
 sudo mount /dev/sda1 /mnt
+MÓDULO II: Sistemas operativos en ejecución
+
+------------------------------------------------------------
+Práctica 1 – Gestión de paquetes y actualización del sistema
+
+Actualización y privilegios:
+sudo dnf update                  # Actualiza paquetes disponibles
+sudo dnf upgrade                 # Aplica actualizaciones a paquetes instalados
+sudo su                          # Cambia a usuario root
+
+Gestión de repositorios:
+dnf repolist                     # Lista repositorios habilitados
+dnf repolist --all                # Lista todos los repositorios (habilitados y deshabilitados)
+sudo dnf search <paquete>        # Busca un paquete en los repositorios
+
+Monitoreo con Bashtop:
+bashtop                           # Ejecuta la herramienta Bashtop
+sudo dnf install bashtop          # Instala Bashtop
+sudo dnf install epel-release -y  # Instala repositorio EPEL
+sudo dnf install bashtop -y       # Instala Bashtop (confirmación automática)
+sudo dnf remove bashtop -y        # Elimina Bashtop
+rm -rf ~/.config/bashtop          # Borra configuración de Bashtop
+sudo dnf autoremove -y            # Elimina paquetes innecesarios
+
+------------------------------------------------------------
+Práctica 2 – Tareas programadas y administración de procesos
+
+Uso de sudo:
+sudo                              # Ejecuta un comando con privilegios administrativos
+
+Crontab (tareas repetitivas):
+crontab -e                        # Edita tareas programadas del usuario
+crontab -l                        # Lista tareas programadas
+
+Nano:
+nano                              # Editor de texto en terminal
+
+Actualización rápida:
+dnf -y update                     # Actualiza paquetes (auto-confirmación)
+
+Gestión de procesos:
+fg                                # Envía proceso en segundo plano a primer plano
+
+Reinicio:
+ /sbin/reboot                     # Reinicia el sistema
+
+Directorio temporal:
+ls /tmp                           # Lista contenido del directorio temporal
+
+Tareas con `at` (tareas únicas):
+systemctl start atd               # Inicia servicio atd
+systemctl enable atd              # Habilita inicio automático de atd
+echo "rm -rf /tmp/*" | at now + 1 minute   # Programa borrado de /tmp en 1 min
+atq                               # Lista tareas programadas con at
+
+------------------------------------------------------------
+Práctica 3 – Gestión de discos y montaje de sistemas de archivos
+
+Listar discos:
+lsblk                             # Muestra dispositivos de almacenamiento
+
+Particionado:
+sudo fdisk /dev/sda               # Inicia herramienta de particionado para /dev/sda
+
+Formateo:
+sudo mkfs.ext4 /dev/sda1          # Formatea partición como ext4
+
+Montaje y directorios:
+mkdir /home/darwing20242690/disco # Crea carpeta para montaje
+cd ..                             # Subir un nivel en directorio
+cd                                # Ir al home del usuario
+ls                                # Lista archivos y carpetas
+rmdir discon                      # Elimina carpeta vacía llamada "discon"
+pwd                               # Muestra ruta actual
+
+Montaje de partición:
+sudo mount /dev/sda1 /home/darwing20242690/disco   # Monta partición en carpeta disco
+
+Prueba de escritura:
+touch AdrianAlcantara.txt         # Crea archivo de prueba
+
+Desmontaje:
+sudo umount /home/darwing20242690/disco   # Desmonta partición
+
+Montaje en /mnt:
+sudo mount /dev/sda1 /mnt         # Monta partición en /mnt
+
 
